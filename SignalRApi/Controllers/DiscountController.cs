@@ -42,7 +42,7 @@ namespace SignalRApi.Controllers
         {
             var value = _DiscountService.TGetByID(id);
             _DiscountService.TDelete(value);
-            return Ok("İletişim Bilgisi Silindi");
+            return Ok("İndirim Bilgisi Silindi");
         }
         [HttpGet("GetDiscount")]
         public IActionResult GetDiscount(int id)
