@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SignalR.EntityLayer.Entities;
-using SignalRApi.EntityLayer.Entities;
 
 namespace SignalR.DataAccessLayer.Concrete
 {
