@@ -8,7 +8,7 @@ namespace SignalR.DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-I1U4DR9); initial Catalog SignalROrderManagementDb; integrated Security=true");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-I1U4DR9; Initial Catalog=SignalROrderManagementDb; Integrated Security=True; TrustServerCertificate=True");
         }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Booking> Bookings { get; set; }
