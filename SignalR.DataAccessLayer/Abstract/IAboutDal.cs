@@ -2,7 +2,7 @@
 
 namespace SignalR.DataAccessLayer.Abstract
 {
-    public interface IAboutDal : IGenericDal<Contact>
+    public interface IAboutDal : IGenericDal<About>
     {
     }
 }
