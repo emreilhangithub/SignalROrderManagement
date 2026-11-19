@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Views\Shared\Components\_LayoutHeaderPartialComponent\Default.cshtml~RF4dc8c01.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\ViewComponents\LayoutComponents\_LayoutHeaderPartialComponent.cs" />
     <None Include="wwwroot\Ready-Bootstrap-Dashboard-master\.DS_Store" />
   </ItemGroup>
 
