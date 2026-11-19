@@ -53,7 +53,7 @@ namespace SignalRApi.Controllers
         [HttpPut]
         public IActionResult UpdateContact(UpdateContactDto updateContactDto)
         {
-            _contactService.TAdd(new Contact()
+            _contactService.TUpdate(new Contact()
             {
                 ContactID = updateContactDto.ContactID,
                 FooterDescription = updateContactDto.FooterDescription,

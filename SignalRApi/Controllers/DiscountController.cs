@@ -53,7 +53,7 @@ namespace SignalRApi.Controllers
         [HttpPut]
         public IActionResult UpdateDiscount(UpdateDiscountDto updateDiscountDto)
         {
-            _DiscountService.TAdd(new Discount()
+            _DiscountService.TUpdate(new Discount()
             {
                 DiscountID = updateDiscountDto.DiscountID,
                 Amount = updateDiscountDto.Amount,

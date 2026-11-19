@@ -54,7 +54,7 @@ namespace SignalRApi.Controllers
         [HttpPut]
         public IActionResult UpdateTestimonial(UpdateTestimonialDto updateTestimonialDto)
         {
-            _TestimonialService.TAdd(new Testimonial()
+            _TestimonialService.TUpdate(new Testimonial()
             {
                 TestimonialID = updateTestimonialDto.TestimonialID,
                 Comment = updateTestimonialDto.Comment,

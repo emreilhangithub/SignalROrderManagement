@@ -55,7 +55,7 @@ namespace SignalRApi.Controllers
         [HttpPut]
         public IActionResult UpdateFeature(UpdateFeatureDto updateFeatureDto)
         {
-            _FeatureService.TAdd(new Feature()
+            _FeatureService.TUpdate(new Feature()
             {
                 FeatureID = updateFeatureDto.FeatureID,
                 Description1 = updateFeatureDto.Description1,
