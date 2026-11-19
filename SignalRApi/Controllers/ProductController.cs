@@ -40,7 +40,7 @@ namespace SignalRApi.Controllers
             ProductID = y.ProductID,
             ProductName = y.ProductName,
             ProductStatus = y.ProductStatus,
-            CategoryName = y.Category.Name
+            CategoryName = y.Category.CategoryName
             });
             return Ok(values.ToList());
         }
