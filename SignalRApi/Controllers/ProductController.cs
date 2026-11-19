@@ -66,7 +66,7 @@ namespace SignalRApi.Controllers
             _ProductService.TDelete(value);
             return Ok("Ürün Bilgisi Silindi");
         }
-        [HttpGet("GetProduct")]
+        [HttpGet("{id}")]
         public IActionResult GetProduct(int id)
         {
             var value = _ProductService.TGetByID(id);
