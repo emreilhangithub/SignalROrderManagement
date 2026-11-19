@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace SignalRWebUI.Views.ViewComponents.LayoutComponents
+namespace SignalRWebUI.ViewComponents.LayoutComponents
 {
-    public class _LayoutSidebarComponentPartial : ViewComponent
+    public class _LayoutNavbarComponentPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {

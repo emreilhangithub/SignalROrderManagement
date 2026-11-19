@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Views\ViewComponents\LayoutComponents\_LayoutHeaderPartialComponent.cs" />
+    <None Include="ViewComponents\LayoutComponents\_LayoutHeaderPartialComponent.cs" />
     <None Include="wwwroot\Ready-Bootstrap-Dashboard-master\.DS_Store" />
   </ItemGroup>
 
