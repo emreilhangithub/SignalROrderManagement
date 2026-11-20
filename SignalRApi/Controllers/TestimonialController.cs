@@ -45,7 +45,7 @@ namespace SignalRApi.Controllers
             _TestimonialService.TDelete(value);
             return Ok("Müşteri Yorum Bilgisi Silindi");
         }
-        [HttpGet("GetTestimonial")]
+        [HttpGet("{id}")]
         public IActionResult GetTestimonial(int id)
         {
             var value = _TestimonialService.TGetByID(id);

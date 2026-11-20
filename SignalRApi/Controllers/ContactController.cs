@@ -33,7 +33,7 @@ namespace SignalRApi.Controllers
                 FooterDescription = createContactDto.FooterDescription,
                 Location = createContactDto.Location,
                 Mail = createContactDto.Mail,
-                Phone = createContactDto.Phone
+                Phone = createContactDto.Phone,
             });
             return Ok("İletişim Bilgisi Eklendi");
         }
@@ -44,7 +44,7 @@ namespace SignalRApi.Controllers
             _contactService.TDelete(value);
             return Ok("İletişim Bilgisi Silindi");
         }
-        [HttpGet("GetContact")]
+        [HttpGet("{id}")]
         public IActionResult GetContact(int id)
         {
             var value = _contactService.TGetByID(id);

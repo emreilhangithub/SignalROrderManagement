@@ -46,7 +46,7 @@ namespace SignalRApi.Controllers
             _FeatureService.TDelete(value);
             return Ok("Öne Çıkan Bilgisi Silindi");
         }
-        [HttpGet("GetFeature")]
+        [HttpGet("{id}")]
         public IActionResult GetFeature(int id)
         {
             var value = _FeatureService.TGetByID(id);
