@@ -60,7 +60,7 @@ namespace SignalRApi.Controllers
             return Ok("Rezervasyon Güncellendi");
         }
 
-        [HttpGet("GetBooking")]
+        [HttpGet("{id}")]
         public ActionResult GetBooking(int id)
         {
             var value = _bookingService.TGetByID(id);
