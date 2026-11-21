@@ -1,61 +1,72 @@
 ﻿using SignalR.BusinessLayer.Abstract;
 using SignalR.DataAccessLayer.Abstract;
-using SignalR.DataAccessLayer.EntityFramework;
 using SignalR.EntityLayer.Entities;
 
 namespace SignalR.BusinessLayer.Concrete
 {
     public class ProductManager : IProductService
     {
-        private readonly IProductDal _ProductDal;
+        private readonly IProductDal _productDal;
 
         public ProductManager(IProductDal ProductDal)
         {
-            _ProductDal = ProductDal;
+            _productDal = ProductDal;
         }
 
+        public string TProductNameByMaxPrice()
+        {
+            return _productDal.ProductNameByMaxPrice();
+        }
+        public string TProductNameByMinPrice()
+        {
+            return _productDal.ProductNameByMinPrice();
+        }
         public void TAdd(Product entity)
         {
-            _ProductDal.Add(entity);
+            _productDal.Add(entity);
         }
 
         public void TDelete(Product entity)
         {
-            _ProductDal.Delete(entity);
+            _productDal.Delete(entity);
         }
 
         public Product TGetByID(int id)
         {
-            return _ProductDal.GetByID(id);
+            return _productDal.GetByID(id);
         }
 
         public List<Product> TGetListAll()
         {
-            return _ProductDal.GetListAll();
+            return _productDal.GetListAll();
         }
 
         public List<Product> TGetProductsWithCategories()
         {
-            return _ProductDal.GetProductsWithCategories();
+            return _productDal.GetProductsWithCategories();
         }
 
         public int TProductCount()
         {
-            return _ProductDal.ProductCount();
+            return _productDal.ProductCount();
         }
         public int TProductCountByCategoryNameDrink()
         {
-            return _ProductDal.ProductCountByCategoryNameDrink();
+            return _productDal.ProductCountByCategoryNameDrink();
         }
 
         public int TProductCountByCategoryNameHamburger()
         {
-            return _ProductDal.ProductCountByCategoryNameHamburger();
+            return _productDal.ProductCountByCategoryNameHamburger();
+        }
+        public decimal TProductPriceAvg()
+        {
+            return _productDal.ProductPriceAvg();
         }
 
         public void TUpdate(Product entity)
         {
-            _ProductDal.Update(entity);
+            _productDal.Update(entity);
         }
     }
 }
