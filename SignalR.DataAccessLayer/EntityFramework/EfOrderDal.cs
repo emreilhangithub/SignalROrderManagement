@@ -15,6 +15,10 @@ namespace SignalR.DataAccessLayer.EntityFramework
             using var context = new SignalRContext();
             return context.Orders.Where(x => x.Description == "Müşteri Masada").Count();
         }
+        public decimal TodayTotalPrice()
+        {
+            return 0;
+        }
 
         public decimal LastOrderPrice()
         {
