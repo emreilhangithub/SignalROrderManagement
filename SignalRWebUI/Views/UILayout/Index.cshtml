@@ -8,7 +8,7 @@
 
 @await Component.InvokeAsync("_UILayoutHeadComponentPartial")
 
-<body class="sub_page">
+<body>
 
     @await Component.InvokeAsync("_UILayoutNavbarComponentPartial")
 
@@ -17,9 +17,10 @@
     <!-- end book section -->
     <!-- footer section -->
     @await Component.InvokeAsync("_UILayoutFooterComponentPartial")
+    @await Component.InvokeAsync("_UILayoutScriptComponentPartial")
     <!-- footer section -->
     <!-- jQery -->
-    @await Component.InvokeAsync("_UILayoutScriptComponentPartial")
+    
 
 </body>
 
