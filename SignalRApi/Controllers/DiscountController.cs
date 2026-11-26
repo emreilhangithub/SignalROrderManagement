@@ -10,25 +10,25 @@ namespace SignalRApi.Controllers
     [ApiController]
     public class DiscountController : ControllerBase
     {
-        private readonly IDiscountService _DiscountService;
+        private readonly IDiscountService _discountService;
         private readonly IMapper _mapper;
 
         public DiscountController(IDiscountService DiscountService, IMapper mapper)
         {
-            _DiscountService = DiscountService;
+            _discountService = DiscountService;
             _mapper = mapper;
         }
 
         [HttpGet]
         public IActionResult DiscountList()
         {
-            var value = _mapper.Map<List<ResultDiscountDto>>(_DiscountService.TGetListAll());
+            var value = _mapper.Map<List<ResultDiscountDto>>(_discountService.TGetListAll());
             return Ok(value);
         }
         [HttpPost]
         public IActionResult CreateDiscount(CreateDiscountDto createDiscountDto)
         {
-            _DiscountService.TAdd(new Discount()
+            _discountService.TAdd(new Discount()
             {
                Amount = createDiscountDto.Amount,
                Description = createDiscountDto.Description,
@@ -40,20 +40,20 @@ namespace SignalRApi.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteDiscount(int id)
         {
-            var value = _DiscountService.TGetByID(id);
-            _DiscountService.TDelete(value);
+            var value = _discountService.TGetByID(id);
+            _discountService.TDelete(value);
             return Ok("İndirim Bilgisi Silindi");
         }
         [HttpGet("{id}")]
         public IActionResult GetDiscount(int id)
         {
-            var value = _DiscountService.TGetByID(id);
+            var value = _discountService.TGetByID(id);
             return Ok(value);
         }
         [HttpPut]
         public IActionResult UpdateDiscount(UpdateDiscountDto updateDiscountDto)
         {
-            _DiscountService.TUpdate(new Discount()
+            _discountService.TUpdate(new Discount()
             {
                 DiscountID = updateDiscountDto.DiscountID,
                 Amount = updateDiscountDto.Amount,
@@ -62,6 +62,25 @@ namespace SignalRApi.Controllers
                 Title = updateDiscountDto.Title
             });
             return Ok("İndirim Bilgisi Güncellendi");
+        }
+        [HttpGet("ChangeStatusToTrue/{id}")]
+        public IActionResult ChangeStatusToTrue(int id)
+        {
+            _discountService.TChangeStatusToTrue(id);
+            return Ok("Ürün İndirimi Aktif Hale Getirildi");
+        }
+
+        [HttpGet("ChangeStatusToFalse/{id}")]
+        public IActionResult ChangeStatusToFalse(int id)
+        {
+            _discountService.TChangeStatusToFalse(id);
+            return Ok("Ürün İndirimi Pasif Hale Getirildi");
+        }
+
+        [HttpGet("GetListByStatusTrue")]
+        public IActionResult GetListByStatusTrue()
+        {
+            return Ok(_discountService.TGetListByStatusTrue());
         }
     }
 }
