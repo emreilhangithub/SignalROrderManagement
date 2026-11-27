@@ -26,4 +26,14 @@
     <ProjectReference Include="..\SignalR.EntityLayer\SignalR.EntityLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ThirdParty\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="QRCoder">
+      <HintPath>ThirdParty\QRCoder.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
