@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using SignalR.BusinessLayer.Abstract;
 using SignalR.DataAccessLayer.Concrete;
+using SignalR.DtoLayer.BasketDto;
 using SignalR.EntityLayer.Entities;
 using SignalRApi.Models;
-using SignalRWebUI.Dtos.BasketDtos;
 
 namespace SignalRApi.Controllers
 {
@@ -47,9 +47,10 @@ namespace SignalRApi.Controllers
             _basketService.TAdd(new Basket()
             {
                 ProductID = createBasketDto.ProductID,
+                MenuTableID = createBasketDto.MenuTableID,
                 Count = 1,
                 Price = context.Products.Where(x => x.ProductID == createBasketDto.ProductID).Select(y => y.Price).FirstOrDefault(),
-                TotalPrice = 0
+                TotalPrice = createBasketDto.TotalPrice
             });
             return Ok();
         }
